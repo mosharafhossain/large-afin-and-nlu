@@ -1,0 +1,1 @@
+This path stores generated affirmative interpretations of the test dataset of AFIN.

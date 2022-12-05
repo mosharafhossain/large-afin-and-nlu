@@ -1,0 +1,6 @@
+torch==1.8.1
+torchvision==0.9.1
+torchaudio==0.8.1
+transformers==4.5.0
+sentencepiece==0.1.95
+nltk==3.6.2

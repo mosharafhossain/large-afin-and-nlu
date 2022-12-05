@@ -1,0 +1,55 @@
+{
+	"seed": 42,
+    "train_shuffle": true,
+    "use_gpu": true,
+    "device": 0,
+    "use_multi_gpus": false,	
+	
+	
+	"with_weak_labels": true,
+	"large_afin_path": "./data/large_afin/large-afin.jsonl",
+	"blended_training": true,
+	"blended_start_epoch": 2, 
+	"blended_end_epoch": 7, 
+	"alpha": 0.30,
+	
+    "learning_rate": 1e-5,
+    "optimizer": "Adafactor",  
+    "adam_epsilon": 1e-8, 
+    "weight_decay": 1e-6, 
+    "warmup_epoch": 3, 
+	"accumulate_step": 1,
+    "grad_clipping":5.0,	
+    
+	"max_epoch": 20,
+	"epochs_no_eval": 0, 
+	"patience": 5,
+    "batch_size": 8,
+	"is_model_tuning": true,
+	
+    "input_len": 80,
+    "target_len": 50,
+		
+    "num_beams": null,
+    "do_sample": true,
+    "early_stopping": true,
+    "top_k": 50,
+    "top_p": 0.95,
+    "repetition_penalty": 2.5,
+    "num_return_sequences": 3,      
+	
+	"T5_type": "large",
+    "T5_path": {"base": "./model/pre-trained/T5-base",
+	            "large": "./model/pre-trained/T5-large"},       
+    
+    "data_path": {
+		"train": "./data/afin/train.jsonl",
+		"dev": "./data/afin/dev.jsonl",
+		"test": "./data/afin/test.jsonl"
+	},
+    "output_path": {
+		"dev": "./output/dev/output_dev.jsonl",
+		"test": "./output/test/output_test.jsonl"		 
+	},
+	"best_model_path": "./model/fine-tuned/T5-large/best_model.bin"
+  }
